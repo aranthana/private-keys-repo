@@ -1,6 +1,8 @@
 #private-keys-repo
 
-##Prerequisites: - Maven 3.1+ 
+##Prerequisites: 
+- Java 11+
+- Maven 3.1+
 
 ##Step 1: Download and unzip the source repository for this guide, or clone it using Git:
 

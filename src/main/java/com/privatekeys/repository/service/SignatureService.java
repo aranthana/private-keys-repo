@@ -8,5 +8,5 @@ public interface SignatureService {
      * @param message
      * @return Signature of the message
      */
-    String generateSignature(String keyId, String message);
+    String generateSignature(int keyId, String message);
 }

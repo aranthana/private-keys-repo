@@ -26,11 +26,11 @@ public class KeyDaoImpl implements KeyDao {
     public Key saveKey(Key key) {
         try {
             lock.lock();
-            if (key.getId() == null) {
-                key.setId(String.valueOf(incrementId.incrementAndGet()));
+            if (key.getId() == null ) {
+                key.setId(incrementId.incrementAndGet());
             }
 
-            keyData.put(Integer.parseInt(key.getId()), key);
+            keyData.put(key.getId(), key);
             return key;
         } finally {
             lock.unlock();
@@ -43,12 +43,12 @@ public class KeyDaoImpl implements KeyDao {
     }
 
     @Override
-    public Key findById(String id) {
-        return keyData.get(Integer.parseInt(id));
+    public Key findById(int id) {
+        return keyData.get(id);
     }
 
     @Override
-    public void deleteById(String id) {
-        keyData.remove(Integer.parseInt(id));
+    public void deleteById(int id) {
+        keyData.remove(id);
     }
 }

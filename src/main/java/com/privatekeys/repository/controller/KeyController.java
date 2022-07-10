@@ -19,6 +19,10 @@ public class KeyController {
     @RequestMapping( method = RequestMethod.POST)
     public Key addNewKey(@RequestBody Key key) {
         log.info("Key insertion workflow, {}", key);
+
+        // As per assignment description, there won't be any key id when inserting. But integration tests passing 0 always. Therefore making it null.
+        key.setId(null);
+
         return keyService.insertKey(key);
     }
 
@@ -29,7 +33,7 @@ public class KeyController {
     }
 
     @RequestMapping(value="/{keyId}", method=RequestMethod.GET)
-    public Key getKey(@PathVariable String keyId) {
+    public Key getKey(@PathVariable int keyId) {
         log.info("Get key workflow, keyId: {}", keyId);
         return keyService.getKeyById(keyId);
     }
@@ -41,7 +45,7 @@ public class KeyController {
     }
 
     @RequestMapping(value="/{keyId}", method=RequestMethod.DELETE)
-    public void deleteKey(@PathVariable String keyId) {
+    public void deleteKey(@PathVariable int keyId) {
         log.info("Delete key workflow, {}", keyId);
         keyService.deleteKey(keyId);
     }

@@ -27,7 +27,7 @@ public class KeyServiceImpl implements KeyService {
     }
 
     @Override
-    public Key getKeyById(String id) {
+    public Key getKeyById(int id) {
         return keyDao.findById(id);
     }
 
@@ -37,7 +37,7 @@ public class KeyServiceImpl implements KeyService {
     }
 
     @Override
-    public void deleteKey(String id) {
+    public void deleteKey(int id) {
         keyDao.deleteById(id);
     }
 }

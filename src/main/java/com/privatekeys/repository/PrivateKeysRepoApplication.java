@@ -1,6 +1,6 @@
 package com.privatekeys.repository;
 
-import org.conscrypt.OpenSSLProvider;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -11,8 +11,8 @@ public class PrivateKeysRepoApplication {
 
     public static void main(String[] args) {
 
-        //Adding open ssl provider from Conscrypt to handle EC
-        Security.addProvider(new OpenSSLProvider());
+        //Adding BouncyCastle provider
+        Security.addProvider(new BouncyCastleProvider());
         SpringApplication.run(PrivateKeysRepoApplication.class, args);
     }
 

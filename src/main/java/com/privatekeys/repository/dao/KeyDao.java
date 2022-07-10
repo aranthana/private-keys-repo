@@ -10,7 +10,7 @@ public interface KeyDao {
 
     List<Key> getAllKeys();
 
-    Key findById(String id);
+    Key findById(int id);
 
-    void deleteById(String id);
+    void deleteById(int id);
 }

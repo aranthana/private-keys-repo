@@ -10,9 +10,9 @@ public interface KeyService {
 
     List<Key> getAllKeys();
 
-    Key getKeyById(String id);
+    Key getKeyById(int id);
 
     Key updateKey(Key key);
 
-    void deleteKey(String id);
+    void deleteKey(int id);
 }

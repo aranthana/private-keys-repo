@@ -52,7 +52,6 @@ public class SignatureServiceImpl implements SignatureService {
                 return encodedSignature;
 
             } catch (NoSuchAlgorithmException | IOException | SignatureException | InvalidKeyException e) {
-                e.printStackTrace();
                 log.error("Error occurred while generating signature. {}", e.getMessage());
                 return null;
             }
